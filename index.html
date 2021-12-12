@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" href="./css/style.min.css" /> -->
+    <title>My Project</title>
+  </head>
+  <body>
+    <div class="container py-5">
+      <h1 class="text-capitalize text-center py-5">typing words using keyframes</h1>
+      <div class="row">
+        <div class="col-12">
+          <div class="text-center py-4">
+            <button id="btn-convert" type="button" class="btn btn-outline-primary text-capitalize">convert</button>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div>
+            <div class="form-floating mb-3">
+              <input type="text" id="input-text" class="form-control" placeholder="Input Text" required />
+              <label for="input-text" class="text-capitalize">Input Text</label>
+            </div>
+            <div class="form-floating mb-3">
+              <select
+                id="select-percentage"
+                class="form-select h-100 overflow-hidden"
+                multiple
+                aria-label="multiple select example"
+              >
+                <option value="1" selected>01%</option>
+                <option value="2">02%</option>
+                <option value="4">04%</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div>
+            <div class="form-floating">
+              <textarea id="output-css" class="form-control" style="height: 300px"></textarea>
+              <label for="output-css" class="text-capitalize">Output Css</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js" defer></script>
+  </body>
+</html>
