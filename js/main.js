@@ -2,7 +2,9 @@ const inputText = document.getElementById('input-text');
 const selectPercentage = document.getElementById('select-percentage');
 const outputCss = document.getElementById('output-css');
 const btn = document.getElementById('btn-convert');
+const animationDurationText = document.getElementById('animation-duration-text');
 
+animationDurationText.value = 3;
 btn.addEventListener('click', convertTextToCss);
 
 function convertTextToCss(e) {
@@ -27,11 +29,36 @@ function convertTextToCss(e) {
       }
     }
 
+    if (+animationDurationText.value < 0) {
+      animationDurationText.value = 3;
+    } else if (isNaN(+animationDurationText.value)) {
+      animationDurationText.value = 3;
+    }
+
     outputCss.value = `
+    .output-animation {
+        animation: typing-text ${animationDurationText.value}s ease-in-out 0s infinite alternate both;
+      }
+
     @keyframes typing-text {
         ${innerText}
       }
 
     `;
+
+    showOutputAnimation();
   }
+}
+
+// __________________________________________________________________________________________
+
+let outputAnimation = document.querySelector('.output-animation');
+
+function showOutputAnimation() {
+  outputAnimation.innerHTML = inputText.value + ' |';
+
+  //   document.styleSheets[1].cssRules['0'].cssText = outputCss.value;
+
+  //   console.log(document.styleSheets[1].cssRules);
+  //   console.log(document.styleSheets[1].cssRules['0'].cssText);
 }

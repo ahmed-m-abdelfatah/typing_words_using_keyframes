@@ -4,9 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/all.min.css" />
     <link rel="stylesheet" href="./css/bootstrap.min.css" />
-    <!-- <link rel="stylesheet" href="./css/style.min.css" /> -->
+    <link rel="stylesheet" href="./css/style.css" />
     <title>My Project</title>
   </head>
   <body>
@@ -14,6 +13,7 @@
       <h1 class="text-capitalize text-center py-5">typing words using keyframes</h1>
       <div class="row">
         <div class="col-12">
+          <div class="output-animation text-center">Output Will Appear Here</div>
           <div class="text-center py-4">
             <button id="btn-convert" type="button" class="btn btn-outline-primary text-capitalize">convert</button>
           </div>
@@ -23,6 +23,16 @@
             <div class="form-floating mb-3">
               <input type="text" id="input-text" class="form-control" placeholder="Input Text" required />
               <label for="input-text" class="text-capitalize">Input Text</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input
+                type="number"
+                id="animation-duration-text"
+                class="form-control"
+                placeholder="Animation Duration"
+                required
+              />
+              <label for="animation-duration-text" class="text-capitalize">Animation Duration</label>
             </div>
             <div class="form-floating mb-3">
               <select
