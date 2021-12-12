@@ -18,7 +18,7 @@ function convertTextToCss(e) {
     for (let i = +selectPercentage.value; i <= 100; i += +selectPercentage.value) {
       innerText += `
         ${i}% {
-            content: '${inputText.value.slice(0, wordCutIndex)} |';
+            content: ' ${inputText.value.slice(0, wordCutIndex)} |';
         }
     `;
 
@@ -30,13 +30,14 @@ function convertTextToCss(e) {
     }
 
     if (+animationDurationText.value < 0) {
-      animationDurationText.value = 3;
+      animationDurationText.value = 5;
     } else if (isNaN(+animationDurationText.value)) {
-      animationDurationText.value = 3;
+      animationDurationText.value = 5;
     }
 
     outputCss.value = `
-    .output-animation {
+    .output-animation::after {
+        content: '';
         animation: typing-text ${animationDurationText.value}s ease-in-out 0s infinite alternate both;
       }
 

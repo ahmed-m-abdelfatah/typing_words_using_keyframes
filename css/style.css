@@ -1,3 +1,410 @@
 div {
   background-color: #fff;
 }
+
+.output-animation::after {
+  content: '';
+  animation: typing-text 10s linear 0s infinite alternate both;
+}
+
+@keyframes typing-text {
+  1% {
+    content: ' A |';
+  }
+
+  2% {
+    content: ' Ah |';
+  }
+
+  3% {
+    content: ' Ahm |';
+  }
+
+  4% {
+    content: ' Ahme |';
+  }
+
+  5% {
+    content: ' Ahmed |';
+  }
+
+  6% {
+    content: ' Ahmed  |';
+  }
+
+  7% {
+    content: ' Ahmed M |';
+  }
+
+  8% {
+    content: ' Ahmed Mo |';
+  }
+
+  9% {
+    content: ' Ahmed Moh |';
+  }
+
+  10% {
+    content: ' Ahmed Moha |';
+  }
+
+  11% {
+    content: ' Ahmed Moham |';
+  }
+
+  12% {
+    content: ' Ahmed Mohame |';
+  }
+
+  13% {
+    content: ' Ahmed Mohamed |';
+  }
+
+  14% {
+    content: ' A |';
+  }
+
+  15% {
+    content: ' Ah |';
+  }
+
+  16% {
+    content: ' Ahm |';
+  }
+
+  17% {
+    content: ' Ahme |';
+  }
+
+  18% {
+    content: ' Ahmed |';
+  }
+
+  19% {
+    content: ' Ahmed  |';
+  }
+
+  20% {
+    content: ' Ahmed M |';
+  }
+
+  21% {
+    content: ' Ahmed Mo |';
+  }
+
+  22% {
+    content: ' Ahmed Moh |';
+  }
+
+  23% {
+    content: ' Ahmed Moha |';
+  }
+
+  24% {
+    content: ' Ahmed Moham |';
+  }
+
+  25% {
+    content: ' Ahmed Mohame |';
+  }
+
+  26% {
+    content: ' Ahmed Mohamed |';
+  }
+
+  27% {
+    content: ' A |';
+  }
+
+  28% {
+    content: ' Ah |';
+  }
+
+  29% {
+    content: ' Ahm |';
+  }
+
+  30% {
+    content: ' Ahme |';
+  }
+
+  31% {
+    content: ' Ahmed |';
+  }
+
+  32% {
+    content: ' Ahmed  |';
+  }
+
+  33% {
+    content: ' Ahmed M |';
+  }
+
+  34% {
+    content: ' Ahmed Mo |';
+  }
+
+  35% {
+    content: ' Ahmed Moh |';
+  }
+
+  36% {
+    content: ' Ahmed Moha |';
+  }
+
+  37% {
+    content: ' Ahmed Moham |';
+  }
+
+  38% {
+    content: ' Ahmed Mohame |';
+  }
+
+  39% {
+    content: ' Ahmed Mohamed |';
+  }
+
+  40% {
+    content: ' A |';
+  }
+
+  41% {
+    content: ' Ah |';
+  }
+
+  42% {
+    content: ' Ahm |';
+  }
+
+  43% {
+    content: ' Ahme |';
+  }
+
+  44% {
+    content: ' Ahmed |';
+  }
+
+  45% {
+    content: ' Ahmed  |';
+  }
+
+  46% {
+    content: ' Ahmed M |';
+  }
+
+  47% {
+    content: ' Ahmed Mo |';
+  }
+
+  48% {
+    content: ' Ahmed Moh |';
+  }
+
+  49% {
+    content: ' Ahmed Moha |';
+  }
+
+  50% {
+    content: ' Ahmed Moham |';
+  }
+
+  51% {
+    content: ' Ahmed Mohame |';
+  }
+
+  52% {
+    content: ' Ahmed Mohamed |';
+  }
+
+  53% {
+    content: ' A |';
+  }
+
+  54% {
+    content: ' Ah |';
+  }
+
+  55% {
+    content: ' Ahm |';
+  }
+
+  56% {
+    content: ' Ahme |';
+  }
+
+  57% {
+    content: ' Ahmed |';
+  }
+
+  58% {
+    content: ' Ahmed  |';
+  }
+
+  59% {
+    content: ' Ahmed M |';
+  }
+
+  60% {
+    content: ' Ahmed Mo |';
+  }
+
+  61% {
+    content: ' Ahmed Moh |';
+  }
+
+  62% {
+    content: ' Ahmed Moha |';
+  }
+
+  63% {
+    content: ' Ahmed Moham |';
+  }
+
+  64% {
+    content: ' Ahmed Mohame |';
+  }
+
+  65% {
+    content: ' Ahmed Mohamed |';
+  }
+
+  66% {
+    content: ' A |';
+  }
+
+  67% {
+    content: ' Ah |';
+  }
+
+  68% {
+    content: ' Ahm |';
+  }
+
+  69% {
+    content: ' Ahme |';
+  }
+
+  70% {
+    content: ' Ahmed |';
+  }
+
+  71% {
+    content: ' Ahmed  |';
+  }
+
+  72% {
+    content: ' Ahmed M |';
+  }
+
+  73% {
+    content: ' Ahmed Mo |';
+  }
+
+  74% {
+    content: ' Ahmed Moh |';
+  }
+
+  75% {
+    content: ' Ahmed Moha |';
+  }
+
+  76% {
+    content: ' Ahmed Moham |';
+  }
+
+  77% {
+    content: ' Ahmed Mohame |';
+  }
+
+  78% {
+    content: ' Ahmed Mohamed |';
+  }
+
+  79% {
+    content: ' A |';
+  }
+
+  80% {
+    content: ' Ah |';
+  }
+
+  81% {
+    content: ' Ahm |';
+  }
+
+  82% {
+    content: ' Ahme |';
+  }
+
+  83% {
+    content: ' Ahmed |';
+  }
+
+  84% {
+    content: ' Ahmed  |';
+  }
+
+  85% {
+    content: ' Ahmed M |';
+  }
+
+  86% {
+    content: ' Ahmed Mo |';
+  }
+
+  87% {
+    content: ' Ahmed Moh |';
+  }
+
+  88% {
+    content: ' Ahmed Moha |';
+  }
+
+  89% {
+    content: ' Ahmed Moham |';
+  }
+
+  90% {
+    content: ' Ahmed Mohame |';
+  }
+
+  91% {
+    content: ' Ahmed Mohamed |';
+  }
+
+  92% {
+    content: ' A |';
+  }
+
+  93% {
+    content: ' Ah |';
+  }
+
+  94% {
+    content: ' Ahm |';
+  }
+
+  95% {
+    content: ' Ahme |';
+  }
+
+  96% {
+    content: ' Ahmed |';
+  }
+
+  97% {
+    content: ' Ahmed  |';
+  }
+
+  98% {
+    content: ' Ahmed M |';
+  }
+
+  99% {
+    content: ' Ahmed Mo |';
+  }
+
+  100% {
+    content: ' Ahmed Moh |';
+  }
+}
