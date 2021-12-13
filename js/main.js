@@ -1,65 +1,18 @@
 const inputText = document.getElementById('input-text');
-const selectPercentage = document.getElementById('select-percentage');
-const outputCss = document.getElementById('output-css');
-const btn = document.getElementById('btn-convert');
 const animationDurationText = document.getElementById('animation-duration-text');
+const percentage = document.getElementById('select-percentage');
+const btn = document.getElementById('btn-convert');
+const outputCss = document.getElementById('output-css');
 
-animationDurationText.value = 3;
-btn.addEventListener('click', convertTextToCss);
+btn.addEventListener('click', function () {
+  cutTextRightSidePyramid();
+});
 
-function convertTextToCss(e) {
-  e.preventDefault();
+function cutTextRightSidePyramid() {
+  let text = inputText.value;
 
-  if (inputText.value) {
-    outputCss.value = '';
-    let innerText = '';
-    let wordCutIndex = 1;
-
-    for (let i = +selectPercentage.value; i <= 100; i += +selectPercentage.value) {
-      innerText += `
-        ${i}% {
-            content: ' ${inputText.value.slice(0, wordCutIndex)} |';
-        }
-    `;
-
-      if (wordCutIndex == inputText.value.length) {
-        wordCutIndex = 1;
-      } else {
-        wordCutIndex++;
-      }
-    }
-
-    if (+animationDurationText.value < 0) {
-      animationDurationText.value = 5;
-    } else if (isNaN(+animationDurationText.value)) {
-      animationDurationText.value = 5;
-    }
-
-    outputCss.value = `
-    .output-animation::after {
-        content: '';
-        animation: typing-text ${animationDurationText.value}s ease-in-out 0s infinite alternate both;
-      }
-
-    @keyframes typing-text {
-        ${innerText}
-      }
-
-    `;
-
-    showOutputAnimation();
+  for (let i = 1; i <= text.length * 2 - 1; i++) {
+    const cut = i <= text.length ? i : text.length * 2 - i;
+    console.log(text.slice(0, cut));
   }
-}
-
-// __________________________________________________________________________________________
-
-let outputAnimation = document.querySelector('.output-animation');
-
-function showOutputAnimation() {
-  outputAnimation.innerHTML = inputText.value + ' |';
-
-  //   document.styleSheets[1].cssRules['0'].cssText = outputCss.value;
-
-  //   console.log(document.styleSheets[1].cssRules);
-  //   console.log(document.styleSheets[1].cssRules['0'].cssText);
 }
