@@ -4,15 +4,37 @@ const percentage = document.getElementById('select-percentage');
 const btn = document.getElementById('btn-convert');
 const outputCss = document.getElementById('output-css');
 
-btn.addEventListener('click', function () {
-  cutTextRightSidePyramid();
-});
+btn.addEventListener('click', getCssRules);
 
-function cutTextRightSidePyramid() {
-  let text = inputText.value;
+function getCssRules() {
+  const text = inputText.value;
+  let textCutIterable = 0;
+  let textCutIndex = 1;
+  let innerCssRule = '';
 
-  for (let i = 1; i <= text.length * 2 - 1; i++) {
-    const cut = i <= text.length ? i : text.length * 2 - i;
-    console.log(text.slice(0, cut));
+  let selectedPercentage = +percentage.value;
+  for (let i = selectedPercentage; i <= 100; i += selectedPercentage) {
+    innerCssRule += `
+    ${i}% {
+        content: '${text.slice(0, textCutIndex)} |';
+    }
+`;
+    textCutIterable++;
+    if (textCutIterable == text.length * 2 - 1) {
+      textCutIterable = 0;
+    } else {
+      textCutIndex = textCutIterable <= text.length ? textCutIterable : text.length * 2 - textCutIterable;
+    }
   }
+
+  outputCss.value = `
+  .output-animation {
+      animation: typing-text ${animationDurationText.value}s ease-in-out 0s infinite alternate both;
+    }
+
+  @keyframes typing-text {
+      ${innerCssRule}
+    }
+
+  `;
 }
