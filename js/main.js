@@ -6,6 +6,7 @@ const outputCss = document.getElementById('output-css');
 
 animationDurationText.value = '5';
 btn.addEventListener('click', getCssRules);
+let outputCssRules;
 
 function getCssRules() {
   const text = inputText.value;
@@ -19,13 +20,13 @@ function getCssRules() {
     for (let i = selectedPercentage; i <= 100; i += selectedPercentage) {
       innerCssRule += `
     ${i}% {
-        content: ' ${text.slice(0, textCutIndex)} |';
+        content: ' ${text.slice(0, textCutIndex)}|';
     }
 `;
       textCutIterable++;
 
       if (textCutIterable == text.length * 2) {
-        textCutIterable = 1;
+        textCutIterable = -1;
       } else {
         textCutIndex = textCutIterable <= text.length ? textCutIterable : text.length * 2 - textCutIterable;
       }
@@ -33,7 +34,7 @@ function getCssRules() {
       //  console.log(`text.length ${text.length}`, `textCutIndex ${textCutIndex}`, `textCutIterable ${textCutIterable}`);
     }
 
-    outputCss.value = `
+    outputCssRules = outputCss.value = `
   .output-animation::after {
       content: '';
       animation: typing-text ${animationDurationText.value}s ease-in-out 0s infinite alternate both;
@@ -52,6 +53,27 @@ function getCssRules() {
 }
 
 function addAnimationToPage() {
-  let styleTag = document.getElementsByTagName('style');
-  styleTag.innerHTML = 'hello';
+  //   let styleTag = document.getElementsByTagName('style');
+  //   console.log(styleTag);
+
+  let headTag = document.head;
+  let styleTag = document.createElement('style');
+
+  headTag.appendChild(styleTag);
+
+  styleTag.nodeType = 'text/css';
+
+  styleTag.appendChild(
+    document.createTextNode(
+      outputCssRules +
+        `
+  .output-animation::after {
+      background-color: #222;
+      color: #fff;
+      padding: 2px 5px;
+      margin-left: 7px;
+  }
+  `,
+    ),
+  );
 }
