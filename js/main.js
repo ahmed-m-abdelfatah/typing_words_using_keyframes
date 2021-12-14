@@ -4,7 +4,8 @@ const percentage = document.getElementById('select-percentage');
 const btn = document.getElementById('btn-convert');
 const outputCss = document.getElementById('output-css');
 
-animationDurationText.value = '5';
+const mainDurationTime = 5;
+animationDurationText.value = `${mainDurationTime}`;
 btn.addEventListener('click', getCssRules);
 let outputCssRules;
 
@@ -34,10 +35,22 @@ function getCssRules() {
       //  console.log(`text.length ${text.length}`, `textCutIndex ${textCutIndex}`, `textCutIterable ${textCutIterable}`);
     }
 
+    let animationDurationTextValue = Math.ceil(animationDurationText.value);
+
+    // console.log(animationDurationTextValue);
+
+    if (animationDurationTextValue <= 0) {
+      animationDurationText.value = `${mainDurationTime}`;
+    } else {
+      animationDurationText.value = animationDurationTextValue > 0 ? animationDurationTextValue : mainDurationTime;
+    }
+
+    animationDurationTextValue = Math.ceil(animationDurationText.value);
+
     outputCssRules = outputCss.value = `
   .output-animation::after {
       content: '';
-      animation: typing-text ${animationDurationText.value}s ease-in-out 0s infinite alternate both;
+      animation: typing-text ${animationDurationTextValue}s ease-in-out 0s infinite alternate both;
     }
 
   @keyframes typing-text {
@@ -68,7 +81,7 @@ function addAnimationToPage() {
       outputCssRules +
         `
   .output-animation::after {
-      background-color: #222;
+      background-color: #333;
       color: #fff;
       padding: 2px 5px;
       margin-left: 7px;
