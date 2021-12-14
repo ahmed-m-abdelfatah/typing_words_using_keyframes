@@ -19,7 +19,7 @@ function getCssRules() {
     for (let i = selectedPercentage; i <= 100; i += selectedPercentage) {
       innerCssRule += `
     ${i}% {
-        content: '${text.slice(0, textCutIndex)} |';
+        content: ' ${text.slice(0, textCutIndex)} |';
     }
 `;
       textCutIterable++;
@@ -34,7 +34,8 @@ function getCssRules() {
     }
 
     outputCss.value = `
-  .output-animation {
+  .output-animation::after {
+      content: '';
       animation: typing-text ${animationDurationText.value}s ease-in-out 0s infinite alternate both;
     }
 
@@ -43,7 +44,14 @@ function getCssRules() {
     }
 
   `;
+
+    addAnimationToPage();
   } else {
-    inputText.style.cssText = 'border-color: red;box-shadow: 0 0 0 0.25rem red;';
+    inputText.style.cssText = 'border-color: red;box-shadow: 0 0 0 0.25rem rgb(255 0 0 / 25%);';
   }
+}
+
+function addAnimationToPage() {
+  let styleTag = document.getElementsByTagName('style');
+  styleTag.innerHTML = 'hello';
 }
