@@ -4,10 +4,11 @@ const percentage = document.getElementById('select-percentage');
 const btn = document.getElementById('btn-convert');
 const outputCss = document.getElementById('output-css');
 
+percentage.setAttribute('size', percentage.childElementCount);
 const mainDurationTime = 5;
 animationDurationText.value = `${mainDurationTime}`;
-btn.addEventListener('click', getCssRules);
 let outputCssRules;
+btn.addEventListener('click', getCssRules);
 
 function getCssRules() {
   const text = inputText.value;
@@ -21,7 +22,7 @@ function getCssRules() {
     for (let i = selectedPercentage; i <= 100; i += selectedPercentage) {
       innerCssRule += `
     ${i}% {
-        content: ' ${text.slice(0, textCutIndex)}|';
+        content: ' ${text.slice(0, textCutIndex)}| ';
     }
 `;
       textCutIterable++;
